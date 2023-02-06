@@ -19,8 +19,13 @@ jobs:
 
 ### ⬇ IMPORTANT PART ⬇ ###
 
-      - name: Build, Push and Release a Docker container to Render. # Your custom step name
-        uses: gonuit/render-docker-deploy@v1.3.3  # GitHub action name (leave it as it is).
+      - name: Set up Docker environment
+      uses: docker/setup-docker@v1
+
+      - name: Build Docker Image
+      uses: docker/build-push-action@v2
+      #- name: Build, Push and Release a Docker container to Render. # Your custom step name
+      #  uses: gonuit/render-docker-deploy@v1.3.3  # GitHub action name (leave it as it is).
         with:
           # Below you must provide variables for your Render app.
 
