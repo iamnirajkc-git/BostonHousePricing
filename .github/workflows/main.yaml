@@ -13,15 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check-out your repository.
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Wait for Render Deployment
+        uses: bounceapp/render-action@0.6.0
 
 
 ### ⬇ IMPORTANT PART ⬇ ###
 
 
-      - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-        uses: bounceapp/render-action@0.6.0 # GitHub action name (leave it as it is).
+      
         with:
           email: ${{ secrets.RENDER_EMAIL }}
           
