@@ -19,17 +19,10 @@ jobs:
 
 ### ⬇ IMPORTANT PART ⬇ ###
 
-      - name: Wait for Render Deployment
-        uses: bounceapp/render-action@0.6.0
 
-      #- name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-       # uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
+      - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
+        uses: bounceapp/render-action@0.6.0 # GitHub action name (leave it as it is).
         with:
-          # Below you must provide variables for your Heroku app.
-
-          # The email address associated with your Heroku account.
-          # If you don't want to use repository secrets (which is recommended) you can do:
-          # email: my.email@example.com
           email: ${{ secrets.RENDER_EMAIL }}
           
           # Heroku API key associated with provided user's email.
